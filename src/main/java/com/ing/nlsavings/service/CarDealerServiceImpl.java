@@ -27,6 +27,9 @@ public class CarDealerServiceImpl implements CarDealerService {
     @Override
     public void addCarToDealer(String dealerName, UUID carId) {
         // Use the carService to get a car. And add it to the dealer.
+        Car carById = carService.getCarById(carId);
+        Dealer dealer1 = this.dealers.stream().filter(dealer -> dealer.getDealerName().equals(dealerName)).findFirst().orElse(null);
+        dealer1.addCar(carById);
     }
 
     @Override

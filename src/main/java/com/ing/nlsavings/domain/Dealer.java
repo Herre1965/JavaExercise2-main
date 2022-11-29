@@ -4,7 +4,6 @@ import java.util.List;
 
 public class Dealer {
 
-    public String getName;
     private List <Car> cars;
     private String name;
     private String city;
@@ -35,15 +34,20 @@ public class Dealer {
         this.city = city;
     }
 
-    public List getCar() { return cars;}
+    public List<Car> getCar() { return cars;}
 
-    public void setCars(List cars) {
+    public void setCars(List<Car> cars) {
         this.cars = cars;
     }
 
     public String getDealerName() {
     return name;
     }
+
+    public void addCar(Car car){
+        this.cars.add(car);
+    }
+
 }
 
 
